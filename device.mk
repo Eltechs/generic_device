@@ -36,6 +36,10 @@ else
 endif
 endif
 
+ifneq ($(CONFIG_ARMBT),)
+        $(call inherit-product, $(LOCAL_PATH)/device_armbt.mk)
+endif
+
 $(call inherit-product-if-true, $(CONFIG_TV), $(LOCAL_PATH)/device_tv.mk)
 $(call inherit-product-if-true, $(CONFIG_TABLET), $(LOCAL_PATH)/device_tablet.mk)
 
