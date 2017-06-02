@@ -17,9 +17,9 @@
 # Copy the 64-bit primary, 32-bit secondary zygote startup script
 PRODUCT_COPY_FILES += external/ubt/ubt_a32a64_bridge:system/vendor/lib64/libubt_a32a64_bridge.so
 
-# Dirty hack: treat arm32 arch as 64-bit one.
+# register ubt as native bridge 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-ro.dalvik.vm.native.bridge=libubt_a32a64_bridge.so \
-ro.product.cpu.cpulist64=arm64-v8a,armeabi,armeabi-v7a,armeabi \
-ro.product.cpu.cpulist32=
+ro.dalvik.vm.native.bridge=libubt_a32a64_bridge.so 
 
+# Dirty hack: treat arm32 arch as 64-bit one 
+TARGET_CPU_ABI_LIST_64_BIT := arm64-v8a,armeabi-v7a,armeabi
