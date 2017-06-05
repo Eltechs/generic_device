@@ -23,3 +23,5 @@ ro.dalvik.vm.native.bridge=libubt_a32a64_bridge.so
 
 # Dirty hack: treat arm32 arch as 64-bit one 
 TARGET_CPU_ABI_LIST_64_BIT := arm64-v8a,armeabi-v7a,armeabi
+
+PRODUCT_PACKAGES += ubt
