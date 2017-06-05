@@ -17,7 +17,7 @@
 # Copy the 64-bit primary, 32-bit secondary zygote startup script
 PRODUCT_COPY_FILES += \
 external/ubt/ubt_a32a64_bridge:system/vendor/lib64/libubt_a32a64_bridge.so \
-external/ubt/armv7-guest:system/vendor/armv7g-guest
+-ra external/ubt/armv7-guest:system/vendor/armv7g-guest
 
 
 # register ubt as native bridge 
