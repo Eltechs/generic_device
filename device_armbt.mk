@@ -14,11 +14,22 @@
 # limitations under the License.
 #
 
+# Copy the 64-bit primary, 32-bit secondary zygote startup script
+PRODUCT_COPY_FILES := device/linaro/generic/init.zygote64_armbt.rc:root/init.zygote64_armbt.rc
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES := ro.zygote=zygote64_armbt
+
+TARGET_SUPPORTS_64_BIT_APPS := true
+
+AUDIOSERVER_MULTILIB := 64
+
 # register ubt as native bridge 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 ro.dalvik.vm.native.bridge=libubt_a32a64_bridge.so 
 
-# Dirty hack: treat arm32 arch as 64-bit one 
-TARGET_CPU_ABI_LIST_64_BIT := arm64-v8a,armeabi-v7a,armeabi
+TARGET_CPU_ABI_LIST_64_BIT := arm64-v8a
+TARGET_CPU_ABI_LIST_32_BIT := armeabi,armeabi-v7a
 
-PRODUCT_PACKAGES += ubt
+PRODUCT_PACKAGES += \
+ubt \
+setaddr32

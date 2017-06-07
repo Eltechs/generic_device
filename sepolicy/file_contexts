@@ -1,1 +1,2 @@
 /system/bin/init\.sh    u:object_r:init-sh_exec:s0
+/system/bin/setaddr32   u:object_r:zygote_exec:s0

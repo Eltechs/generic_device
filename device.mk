@@ -28,6 +28,9 @@ define add-to-product-copy-files-if-true
  $(call add-to-product-copy-files-if-exists, $(if $(filter true,$(1)),$(2)))
 endef
 
+ifneq ($(CONFIG_ARMBT),)
+        $(call inherit-product, $(LOCAL_PATH)/device_armbt.mk)
+else
 ifneq ($(CONFIG_64_BIT),)
 ifeq ($(CONFIG_HAS_2ND_ARCH),)
         $(call inherit-product, $(LOCAL_PATH)/device_64only.mk)
@@ -35,10 +38,9 @@ else
         $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 endif
 endif
-
-ifneq ($(CONFIG_ARMBT),)
-        $(call inherit-product, $(LOCAL_PATH)/device_armbt.mk)
 endif
+
+
 
 $(call inherit-product-if-true, $(CONFIG_TV), $(LOCAL_PATH)/device_tv.mk)
 $(call inherit-product-if-true, $(CONFIG_TABLET), $(LOCAL_PATH)/device_tablet.mk)
