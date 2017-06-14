@@ -28,7 +28,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 ro.dalvik.vm.native.bridge=libubt_a32a64_bridge.so 
 
 TARGET_CPU_ABI_LIST_64_BIT := arm64-v8a
-TARGET_CPU_ABI_LIST_32_BIT := armeabi,armeabi-v7a
+TARGET_CPU_ABI_LIST_32_BIT := armeabi-v7a,armeabi
 
 PRODUCT_PACKAGES += \
 ubt \
